@@ -70,6 +70,7 @@ require (
 	golang.org/x/net v0.0.0-20190926025831-c00fd9afed17
 	golang.org/x/tools v0.0.0-20191028215554-80f3f9ca0853 // indirect
 	google.golang.org/api v0.10.0
+	google.golang.org/appengine v1.6.1
 	google.golang.org/grpc v1.24.0
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect

@@ -1,0 +1,25 @@
+// package kafka
+
+
+// import (
+// 	"testing"
+
+// 	"github.com/stretchr/testify/assert"
+
+// 	"github.com/dapr/components-contrib/pubsub"
+// )
+
+// type testConsumerGroup struct {
+
+// }
+
+// func createTestConsumerGroup(addrs []string, groupID string, config *sarama.Config) (sarama.ConsumerGroup, error) {
+// 	return &testConsumerGroup{}, error
+// }
+
+// func TestSubscriberCreatesConsumer(t *testing.T) {
+// 	func 
+// 	target := newKafka(func(_,_,_) (sarama.ConsumerGroup, error) {
+// 		return &testConsumerGroup{}, nil
+// 	})
+// }
