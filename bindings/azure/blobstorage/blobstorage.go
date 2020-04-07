@@ -11,6 +11,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/url"
+	"time"
 
 	"github.com/dapr/dapr/pkg/logger"
 	"github.com/google/uuid"
@@ -41,6 +42,7 @@ type blobStorageMetadata struct {
 	StorageAccount   string `json:"storageAccount"`
 	StorageAccessKey string `json:"storageAccessKey"`
 	Container        string `json:"container"`
+	ttl              *time.Duration
 }
 
 // NewAzureBlobStorage returns a new Azure Blob Storage instance
@@ -86,6 +88,16 @@ func (a *AzureBlobStorage) parseMetadata(metadata bindings.Metadata) (*blobStora
 	if err != nil {
 		return nil, err
 	}
+
+	ttl, ok, err := bindings.TryGetTTL(metadata.Properties)
+	if err != nil {
+		return nil, err
+	}
+
+	if ok {
+		m.ttl = &ttl
+	}
+
 	return &m, nil
 }
 
